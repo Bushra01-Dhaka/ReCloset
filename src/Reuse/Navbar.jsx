@@ -4,23 +4,23 @@ const Navbar = () => {
     <>
       <li className="py-2 lg:py-0 text-2xl lg:text-[16px]">
         <NavLink
-          to="/aboutMe"
+          to="/ourGoal"
           className={({ isActive }) =>
             isActive ? "text-primary font-semibold" : ""
           }
         >
-          About Me
+          Our Goal
         </NavLink>
       </li>
 
       <li className="py-2 lg:py-0 text-2xl lg:text-[16px]">
         <NavLink
-          to="/skills"
+          to="/products"
           className={({ isActive }) =>
             isActive ? "text-primary font-semibold" : ""
           }
         >
-          Skills
+          Collections
         </NavLink>
       </li>
 
@@ -31,7 +31,7 @@ const Navbar = () => {
             isActive ? "text-primary font-semibold" : ""
           }
         >
-          Projects
+          Resell Now
         </NavLink>
       </li>
 
