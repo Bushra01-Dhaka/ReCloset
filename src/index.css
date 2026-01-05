@@ -8,8 +8,9 @@
   @plugin "daisyui/theme" {
    name: "dark";
    default: true;
-  --color-primary: #CAEB66;
-  --color-secondary: #1A1A1D;
+  --color-primary: #06B6D4;
+  --color-secondary: #ffff;
+  --color-accent: #8B5CF6;
 }
 
 .font-outfit{
