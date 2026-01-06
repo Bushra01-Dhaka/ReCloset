@@ -4,6 +4,7 @@ import coverImg from "../../assets/donate2.jpg"
 import DonateClothBanner from "../../Components/HomeComponents/DonateClothBanner";
 import NgoMarques from "../../Components/HomeComponents/NgoMarques";
 import PictureCards from "../../CustomThing/PictureCards";
+import CollaborateWithReCloset from "../../Components/HomeComponents/CollaborateWithReCloset";
 
 const OurGoal = () => {
   const primaryBtn = usePrimaryBtn();
@@ -60,7 +61,7 @@ const OurGoal = () => {
         <NgoMarques/>
       </div>
 
-      <PictureCards></PictureCards>
+      <CollaborateWithReCloset></CollaborateWithReCloset>
     </section>
   );
 };

@@ -9,7 +9,7 @@ const PictureCards = () => {
         data-aos="fade-right"
         data-aos-duration="1000"
       >
-        <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight">
+        <h1 className="text-4xl md:text-5xl font-heading font-extrabold leading-tight">
           Give Your Clothes a{" "}
           <span className="bg-linear-to-r from-accent to-primary bg-clip-text text-transparent">
             Second Life
@@ -17,8 +17,7 @@ const PictureCards = () => {
         </h1>
 
         <p className="py-6 text-base-content/80">
-          ReCloset lets you sell, share, and discover pre-loved fashion.
-          Sustainable style made simple for everyone.
+         ReCloset connects generous hearts with those in need by giving clothes a second life. Every donation reduces waste, supports communities, and reminds us that small acts of kindness can make a big difference.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
