@@ -1,23 +1,31 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
     <footer className="bg-neutral text-neutral-content pt-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-20">
-
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12">
-
           {/* Brand */}
           <div>
-            <h2 className="text-lg lg:text-2xl font-bold tracking-wide
+            <Link to="/">
+              <h2
+                className="text-lg lg:text-2xl font-bold tracking-wide
       bg-linear-to-r ml-[-4px] from-primary to-accent
-      bg-clip-text text-transparent">
-              ReCloset
-            </h2>
+      bg-clip-text text-transparent"
+              >
+                ReCloset
+              </h2>
+            </Link>
             <p className="mt-4 text-sm text-neutral-content/70">
-              ReCloset is a sustainable fashion platform helping pre-loved clothes
-              find a second life while reducing waste and guilt.
+              ReCloset is a sustainable fashion platform helping pre-loved
+              clothes find a second life while reducing waste and guilt.
             </p>
           </div>
 
@@ -49,14 +57,12 @@ const Footer = () => {
               <FaLinkedinIn className="cursor-pointer hover:text-primary transition" />
             </div>
           </div>
-
         </div>
 
         {/* Bottom Section */}
         <div className="border-t border-neutral-content/20 py-6 text-center text-sm text-neutral-content/70">
           © {new Date().getFullYear()} ReCloset. All rights reserved.
         </div>
-
       </div>
     </footer>
   );

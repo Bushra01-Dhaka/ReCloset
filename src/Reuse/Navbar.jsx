@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router";
+import usePrimaryBtn from "../Hooks/usePrimaryBtn";
 const Navbar = () => {
+  const primaryBtn = usePrimaryBtn();
   const navItems = (
     <>
       <li className="py-2 lg:py-0 text-2xl lg:text-[16px]">
@@ -49,7 +51,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar lg:bg-transparent bg-slate-900 bg-opacity-40 md:max-w-screen-2xl mx-auto  lg:px-20 px-4 fixed z-99">
+    <div className="navbar lg:bg-transparent bg-slate-900 bg-opacity-40 md:max-w-screen-2xl mx-auto  lg:px-20 px-10 fixed z-99">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -95,8 +97,14 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className="navbar-end hidden lg:flex">
+      <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
+      </div>
+
+      <div className="navbar-end">
+         <Link to="/register">
+          <button className={primaryBtn}>Sign Up</button>
+        </Link>
       </div>
     </div>
   );
