@@ -21,10 +21,10 @@ const Banner = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="btn btn-primary shadow-2xl shadow-primary border-0 bg-linear-to-r text-black hover:bg-linear-to-l from-primary to-accent">
+              <button className="btn btn-primary font-bold shadow-2xl shadow-primary border-0 bg-linear-to-r text-black hover:bg-linear-to-l from-primary to-accent">
                 Sell Your Clothes
               </button>
-              <button className="btn btn-outline btn-primary hover:shadow-2xl shadow-accent hover:text-black hover:bg-linear-to-r from-primary to-accent">
+              <button className="btn btn-outline font-bold btn-primary hover:shadow-2xl shadow-accent hover:text-black hover:bg-linear-to-r from-primary to-accent">
                 Browse Collection
               </button>
             </div>
