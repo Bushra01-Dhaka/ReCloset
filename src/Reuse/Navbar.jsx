@@ -1,7 +1,19 @@
 import { Link, NavLink } from "react-router";
 import usePrimaryBtn from "../Hooks/usePrimaryBtn";
+import useAuth from "../Hooks/useAuth";
 const Navbar = () => {
   const primaryBtn = usePrimaryBtn();
+  const {logOut, user} = useAuth();
+
+  const handleLogOut = () => {
+     logOut()
+     .then(result => {
+      console.log(result.user)
+     })
+     .catch(error => {
+      console.error(error);
+     })
+  }
   const navItems = (
     <>
       <li className="py-2 lg:py-0 text-2xl lg:text-[16px]">
@@ -102,9 +114,14 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-         <Link to="/register">
-          <button className={primaryBtn}>Sign Up</button>
+        {
+          user ?  <button onClick={handleLogOut}  className="btn hover:text-black font-bold btn-outline btn-primary btn-sm hover:shadow-2xl hover:shadow-primary">Log Out</button> 
+          :
+          <Link to="/register">
+          <button className="btn btn-sm btn-primary font-bold shadow-2xl shadow-primary border-0 bg-linear-to-r text-black hover:bg-linear-to-l from-primary to-accent">Sign Up</button>
         </Link>
+
+        }
       </div>
     </div>
   );
