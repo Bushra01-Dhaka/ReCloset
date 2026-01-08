@@ -5,6 +5,8 @@ import OurGoal from "../Pages/OurGoal/OurGoal";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import DonateYourCloths from "../Pages/DonateYourCloths/DonateYourCloths";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
         {
           path:"/login",
           Component: Login,
+        },
+        {
+          path:"/donateCloths",
+          element: <PrivateRoutes><DonateYourCloths></DonateYourCloths></PrivateRoutes>
         }
     ]
   },

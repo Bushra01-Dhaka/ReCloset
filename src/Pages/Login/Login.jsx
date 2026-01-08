@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import SocialLogin from "../../CustomThing/SocialLogin";
 
 const Login = () => {
   const primaryBtn = usePrimaryBtn();
@@ -141,10 +142,7 @@ const Login = () => {
           <div className="divider">OR</div>
 
           {/* Google Login */}
-          <button className="btn btn-outline w-full flex items-center gap-2">
-            <FaGoogle className="text-yellow-500" />
-            Continue with Google
-          </button>
+         <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>

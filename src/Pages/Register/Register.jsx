@@ -1,20 +1,26 @@
 import { FaGoogle } from "react-icons/fa";
 import registerImg from ".././../assets/log2.png";
 import usePrimaryBtn from "../../Hooks/usePrimaryBtn";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import useAxios from "../../Hooks/useAxios";
+import SocialLogin from "../../CustomThing/SocialLogin";
 
 const Register = () => {
   const primaryBtn = usePrimaryBtn();
-  const { createUser } = useAuth();
+  const { createUser,  updateUserProfile } = useAuth();
   const navigate = useNavigate();
+  const axiosPublic = useAxios();
+   const location = useLocation();
+   const from = location.state?.from || "/";
 
   const {
     register,
     handleSubmit,
     watch,
+    refetch,
     formState: { errors },
   } = useForm();
 
@@ -26,6 +32,32 @@ const Register = () => {
       console.log("Logged User", loggedUser);
 
       // TODO: Update User Info into DB
+      const userInfo = {
+        name: data.name,
+        email: data.email,
+        photo: data.photo,
+        role: "user",
+        createdAt: new Date().toISOString(),
+      }
+
+      const userRes = axiosPublic.post("/users", userInfo);
+      console.log(userRes.data);
+
+      // update user profile
+      const userProfile = {
+         displayName: data.name,
+         photoURL: data.photo
+      }
+
+       updateUserProfile(userProfile)
+       .then(() => {
+        console.log("Name and Image are updated");
+        refetch;
+       })
+       .catch(error => {
+        console.error(error)
+       })
+
       toast("Account Created Successfully!", {
         style: {
           borderRadius: "10px",
@@ -33,7 +65,7 @@ const Register = () => {
           color: "#06B6D4",
         },
       });
-      navigate("/");
+      navigate(from);
 
 
     });
@@ -183,11 +215,10 @@ const Register = () => {
           <div className="divider">OR</div>
 
           {/* Google Login */}
-          <button className="btn btn-outline w-full flex items-center gap-2">
-            <FaGoogle className="text-yellow-500" />
-            Continue with Google
-          </button>
+          <SocialLogin></SocialLogin>
         </div>
+
+
       </div>
     </div>
   );

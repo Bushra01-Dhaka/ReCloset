@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router";
 
 const PictureCards = () => {
   return (
@@ -17,13 +18,17 @@ const PictureCards = () => {
         </h1>
 
         <p className="py-6 text-base-content/80">
-         ReCloset connects generous hearts with those in need by giving clothes a second life. Every donation reduces waste, supports communities, and reminds us that small acts of kindness can make a big difference.
+          ReCloset connects generous hearts with those in need by giving clothes
+          a second life. Every donation reduces waste, supports communities, and
+          reminds us that small acts of kindness can make a big difference.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <button className="btn btn-primary font-bold shadow-2xl shadow-primary border-0 bg-linear-to-r text-black hover:bg-linear-to-l from-primary to-accent">
-            Donate Your Clothes
-          </button>
+          <Link to="/donateCloths">
+            <button className="btn btn-primary font-bold shadow-2xl shadow-primary border-0 bg-linear-to-r text-black hover:bg-linear-to-l from-primary to-accent">
+              Donate Your Clothes
+            </button>
+          </Link>
           <button className="btn btn-outline font-bold btn-primary hover:shadow-2xl shadow-accent hover:text-black hover:bg-linear-to-r from-primary to-accent">
             Browse Collection
           </button>
