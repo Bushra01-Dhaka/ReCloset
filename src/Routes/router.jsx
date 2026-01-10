@@ -7,6 +7,9 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import DonateYourCloths from "../Pages/DonateYourCloths/DonateYourCloths";
 import PrivateRoutes from "./PrivateRoutes";
+import DashbordLayout from "../Layouts/DashbordLayout";
+import MyListingCloths from "../Pages/Dashboard/MyListingCloths/MyListingCloths";
+import DashboardHome from "../Pages/DashboardHome/DashboardHome";
 
 const router = createBrowserRouter([
   {
@@ -39,5 +42,21 @@ const router = createBrowserRouter([
         }
     ]
   },
+
+  // Dashboard
+  {
+    path:"/dashboard",
+    element:<PrivateRoutes><DashbordLayout></DashbordLayout></PrivateRoutes>,
+    children:[
+      {
+        index:true,
+        Component:DashboardHome,
+      },
+       {
+        path:"myListing",
+        Component:MyListingCloths,
+       }
+    ]
+  }
 ]);
 export default router

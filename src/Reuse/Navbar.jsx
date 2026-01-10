@@ -59,6 +59,21 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+
+      {
+        user && 
+      <li className="py-2 lg:py-0 text-2xl lg:text-[16px]">
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            isActive ? "text-primary font-semibold" : ""
+          }
+        >
+          Dashboard
+        </NavLink>
+      </li>
+
+      }
     </>
   );
 
@@ -92,13 +107,7 @@ const Navbar = () => {
         </div>
         <Link to="/">
           <div className="flex justify-center items-center">
-            {/* <img
-              className="w-[30px] h-[30px] rounded-full bg-primary
-                 animate-spin [animation-duration:6s] [animation-timing-function:linear]"
-              src={logo}
-              alt="Logo"
-            /> */}
-
+            
             <h2
               className="text-lg lg:text-2xl font-bold tracking-wide
       bg-gradient-to-r ml-[-4px] from-primary to-accent

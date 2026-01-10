@@ -5,6 +5,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 import { div } from "framer-motion/client";
+import Swal from "sweetalert2";
 
 const DonateYourCloths = () => {
   const { user } = useAuth();
@@ -64,16 +65,23 @@ const DonateYourCloths = () => {
        selected_service_center: data.selectedServiceCenter,
        address: data.address,
        charge: data.charge,
+       price: data.price,
        created_at: new Date().toISOString(),
+       status: "pending",
     }
 
     axiosSecure.post("/cloths", donateClothInfo)
     .then((res) => {
       console.log(res.data);
       if(res.data.insertedId){
-        toast.success("Cloths Donated Successfully")
-        // navigate TODO: back to dashboard
-        navigate("/");
+        Swal.fire({
+              icon: "success",
+              title: "Your cloths are donated successfully!",
+              timer: 2000,
+              showConfirmButton: false,
+            }).then(() => {
+              navigate("/");
+            });
       }
     })
     .catch(error => {
