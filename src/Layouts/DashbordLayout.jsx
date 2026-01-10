@@ -1,3 +1,4 @@
+import { FaDonate } from "react-icons/fa";
 import { MdInventory } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { Link, NavLink, Outlet } from "react-router";
@@ -36,17 +37,16 @@ const DashbordLayout = () => {
             <ul className="menu menu-horizontal ">
               {/* Navbar menu content here */}
               <Link to="/">
-          <div className="flex justify-center items-center">
-            
-            <h2
-              className="text-lg text-center lg:text-2xl font-bold tracking-wide
+                <div className="flex justify-center items-center">
+                  <h2
+                    className="text-lg text-center lg:text-2xl font-bold tracking-wide
       bg-gradient-to-r ml-[-4px] from-primary to-accent
       bg-clip-text text-transparent"
-            >
-              ReCloset
-            </h2>
-          </div>
-        </Link>
+                  >
+                    ReCloset
+                  </h2>
+                </div>
+              </Link>
 
               <li>
                 <NavLink
@@ -65,6 +65,18 @@ const DashbordLayout = () => {
                 >
                   <MdInventory className="text-lg" />
                   My Listing Cloths
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/myDonations"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaDonate className="text-lg" />
+                  My Donations
                 </NavLink>
               </li>
             </ul>
@@ -87,18 +99,17 @@ const DashbordLayout = () => {
           {/* Sidebar content here */}
           <div className="text-start flex items-start p-4 mb-6">
             {/* <ParcelioLogo></ParcelioLogo> */}
-             <Link to="/">
-          <div className="flex justify-center items-center">
-            
-            <h2
-              className="text-lg text-center lg:text-2xl font-bold tracking-wide
+            <Link to="/">
+              <div className="flex justify-center items-center">
+                <h2
+                  className="text-lg text-center lg:text-2xl font-bold tracking-wide
       bg-gradient-to-r ml-[-4px] from-primary to-accent
       bg-clip-text text-transparent"
-            >
-              ReCloset
-            </h2>
-          </div>
-        </Link>
+                >
+                  ReCloset
+                </h2>
+              </div>
+            </Link>
           </div>
           <li>
             <NavLink
@@ -113,20 +124,31 @@ const DashbordLayout = () => {
             </NavLink>
           </li>
 
-           <li>
-                <NavLink
-                  to="/dashboard/myListing"
-                  className={({ isActive }) =>
+          <li>
+            <NavLink
+              to="/dashboard/myListing"
+              className={({ isActive }) =>
                 `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
      ${isActive ? " shadow-primary shadow-lg  font-bold" : "hover:bg-primary"}`
               }
-                >
-                  <MdInventory className="text-lg" />
-                  My Listing Cloths
-                </NavLink>
-              </li>
+            >
+              <MdInventory className="text-lg" />
+              My Listing Cloths
+            </NavLink>
+          </li>
 
-
+          <li>
+            <NavLink
+              to="/dashboard/myDonations"
+              className={({ isActive }) =>
+                `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+              }
+            >
+              <FaDonate className="text-lg" />
+              My Donations
+            </NavLink>
+          </li>
         </ul>
       </div>
     </div>

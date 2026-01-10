@@ -10,6 +10,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import DashbordLayout from "../Layouts/DashbordLayout";
 import MyListingCloths from "../Pages/Dashboard/MyListingCloths/MyListingCloths";
 import DashboardHome from "../Pages/DashboardHome/DashboardHome";
+import MyDonations from "../Pages/Dashboard/MyDonations/MyDonations";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
        {
         path:"myListing",
         Component:MyListingCloths,
+       },
+       {
+        path:"myDonations",
+        Component:MyDonations,
        }
     ]
   }
