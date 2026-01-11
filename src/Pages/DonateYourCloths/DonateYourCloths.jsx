@@ -66,6 +66,7 @@ const DonateYourCloths = () => {
        address: data.address,
        charge: data.charge,
        price: data.price,
+       resell_status:"not_sold",
        created_at: new Date().toISOString(),
        status: "pending",
     }
@@ -96,7 +97,7 @@ const DonateYourCloths = () => {
         {/* Header */}
         <div className="text-center mb-12 pt-10">
           <h2 className="text-3xl md:text-4xl font-heading font-bold">
-            Donate Your <span className="text-primary">Clothes</span>
+            Donate / <span className="text-primary">Resell</span> Your <span className="text-primary">Clothes</span>
           </h2>
           <p className="mt-4 text-base-content/70">
             Donate or resell your clothes responsibly with ReCloset.
@@ -111,7 +112,7 @@ const DonateYourCloths = () => {
           {/* Donor Name */}
           <input
             {...register("donar_name", { required: true })}
-            placeholder="Donor Name"
+            placeholder="Your Name"
             className="input input-bordered w-full"
           />
 

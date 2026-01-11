@@ -11,6 +11,8 @@ import DashbordLayout from "../Layouts/DashbordLayout";
 import MyListingCloths from "../Pages/Dashboard/MyListingCloths/MyListingCloths";
 import DashboardHome from "../Pages/DashboardHome/DashboardHome";
 import MyDonations from "../Pages/Dashboard/MyDonations/MyDonations";
+import MyResellItems from "../Pages/Dashboard/MyResellItems/MyResellItems";
+import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +62,14 @@ const router = createBrowserRouter([
        {
         path:"myDonations",
         Component:MyDonations,
+       },
+       {
+        path:"myResellItems",
+        Component:MyResellItems,
+       },
+       {
+        path:"myProfile",
+        Component:MyProfile,
        }
     ]
   }

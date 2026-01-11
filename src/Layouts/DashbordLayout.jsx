@@ -1,4 +1,4 @@
-import { FaDonate } from "react-icons/fa";
+import { FaDonate, FaTags, FaUserCircle } from "react-icons/fa";
 import { MdInventory } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { Link, NavLink, Outlet } from "react-router";
@@ -79,6 +79,30 @@ const DashbordLayout = () => {
                   My Donations
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/dashboard/myResellItems"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaTags className="text-lg" />
+                  My Resell Items
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/myProfile"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaUserCircle className="text-lg" />
+                  My Profile
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -147,6 +171,30 @@ const DashbordLayout = () => {
             >
               <FaDonate className="text-lg" />
               My Donations
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard/myResellItems"
+              className={({ isActive }) =>
+                `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+              }
+            >
+              <FaTags className="text-lg" />
+              My Resell Items
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard/myProfile"
+              className={({ isActive }) =>
+                `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+              }
+            >
+              <FaUserCircle className="text-lg" />
+              My Profile
             </NavLink>
           </li>
         </ul>
