@@ -1,4 +1,4 @@
-import { FaDonate, FaTags, FaUserCircle } from "react-icons/fa";
+import { FaDonate, FaHeart, FaTags, FaUserCircle } from "react-icons/fa";
 import { MdInventory } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { Link, NavLink, Outlet } from "react-router";
@@ -103,6 +103,18 @@ const DashbordLayout = () => {
                   My Profile
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/dashboard/wishList"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaHeart className="text-lg" />
+                  Wish List
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -195,6 +207,18 @@ const DashbordLayout = () => {
             >
               <FaUserCircle className="text-lg" />
               My Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard/wishList"
+              className={({ isActive }) =>
+                `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+              }
+            >
+              <FaHeart className="text-lg" />
+              Wish List
             </NavLink>
           </li>
         </ul>

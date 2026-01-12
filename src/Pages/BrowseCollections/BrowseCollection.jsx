@@ -94,10 +94,10 @@ const BrowseCollection = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="card-actions mt-4 justify-between">
-                  <button className="btn btn-outline btn-sm">
+                <div className="card-actions mt-4 justify-end">
+                  {/* <button className="btn btn-outline btn-sm">
                     <FaHeart />
-                  </button>
+                  </button> */}
 
                   <button
                     disabled={cloth.resell_status !== "not_sold"}
