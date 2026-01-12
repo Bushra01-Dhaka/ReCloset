@@ -6,6 +6,7 @@ import Features from "../../Components/HomeComponents/Features"
 import HeroBanner from "../../Components/HomeComponents/HeroBanner"
 import NgoMarques from "../../Components/HomeComponents/NgoMarques"
 import OurClosetBanner from "../../Components/HomeComponents/OurClosetBanner"
+import BrowseCollection from "../BrowseCollections/BrowseCollection"
 import ContactUs from "../ContactUs/ContactUs"
 
 
@@ -15,6 +16,7 @@ const Home = () => {
         <HeroBanner></HeroBanner>
         <Features></Features>
         <DonateClothBanner></DonateClothBanner>
+        <BrowseCollection></BrowseCollection>
          <NgoMarques></NgoMarques>
         <OurClosetBanner></OurClosetBanner>
         <CollaborateWithReCloset></CollaborateWithReCloset>

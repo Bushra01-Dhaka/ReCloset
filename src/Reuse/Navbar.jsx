@@ -40,12 +40,12 @@ const Navbar = () => {
 
       <li className="py-2 lg:py-0 text-2xl lg:text-[16px]">
         <NavLink
-          to="/myProjects"
+          to="/browseCollections"
           className={({ isActive }) =>
             isActive ? "text-primary font-semibold" : ""
           }
         >
-          Resell Now
+          Browse Collections
         </NavLink>
       </li>
 

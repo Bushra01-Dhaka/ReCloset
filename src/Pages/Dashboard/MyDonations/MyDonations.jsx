@@ -53,9 +53,9 @@ const MyDonations = () => {
   }
 
   return (
-    <section className="px-4 lg:px-10 py-10">
+    <section className="px-4 lg:py-20 lg:px-10 py-10">
       {/* Title */}
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+      <h2 className="text-2xl md:text-4xl font-bold mb-6 ">
         My Donations
       </h2>
 

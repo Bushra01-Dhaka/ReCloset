@@ -13,6 +13,8 @@ import DashboardHome from "../Pages/DashboardHome/DashboardHome";
 import MyDonations from "../Pages/Dashboard/MyDonations/MyDonations";
 import MyResellItems from "../Pages/Dashboard/MyResellItems/MyResellItems";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
+import BrowseCollection from "../Pages/BrowseCollections/BrowseCollection";
+import ResellProductDetails from "../CustomThing/ResellProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
         {
           path:"/donateCloths",
           element: <PrivateRoutes><DonateYourCloths></DonateYourCloths></PrivateRoutes>
+        },
+        {
+          path:"/browseCollections",
+          Component:BrowseCollection
+        },
+        {
+          path:"/cloths/:id",
+          Component:ResellProductDetails,
         }
     ]
   },

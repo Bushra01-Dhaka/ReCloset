@@ -29,9 +29,11 @@ const PictureCards = () => {
               Donate Your Clothes
             </button>
           </Link>
-          <button className="btn btn-outline font-bold btn-primary hover:shadow-2xl shadow-accent hover:text-black hover:bg-linear-to-r from-primary to-accent">
-            Browse Collection
-          </button>
+          <Link to="/donateCloths">
+            <button className="btn btn-outline font-bold btn-primary hover:shadow-2xl shadow-accent hover:text-black hover:bg-linear-to-r from-primary to-accent">
+              Resell Cloths
+            </button>
+          </Link>
         </div>
       </div>
       <ShuffleGrid />
