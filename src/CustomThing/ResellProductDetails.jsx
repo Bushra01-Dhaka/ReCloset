@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { FaHeart, FaShoppingCart, FaMapMarkerAlt } from "react-icons/fa";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 
@@ -127,13 +127,15 @@ const ResellProductDetails = () => {
                 Save
               </button>
 
-              <button
+             <Link to={`/dashboard/payment/${id}`}>
+                <button
                 disabled={cloth.resell_status !== "not_sold"}
                 className="btn btn-primary"
               >
                 <FaShoppingCart />
                 Buy Now
               </button>
+             </Link>
             </div>
 
             {/* Info Note */}

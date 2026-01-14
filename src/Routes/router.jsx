@@ -16,6 +16,7 @@ import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import BrowseCollection from "../Pages/BrowseCollections/BrowseCollection";
 import ResellProductDetails from "../CustomThing/ResellProductDetails";
 import MyWishlist from "../Pages/Dashboard/MyWishLists/MyWishlist";
+import Payment from "../Pages/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
        {
         path:"wishList",
         Component:MyWishlist,
+       },
+       {
+        path:"payment/:id",
+        Component:Payment,
        }
     ]
   }
