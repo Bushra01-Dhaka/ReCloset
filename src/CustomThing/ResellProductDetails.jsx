@@ -1,4 +1,3 @@
-
 import { useQuery } from "@tanstack/react-query";
 import { FaHeart, FaShoppingCart, FaMapMarkerAlt } from "react-icons/fa";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
@@ -9,7 +8,7 @@ import Swal from "sweetalert2";
 const ResellProductDetails = () => {
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
-  const {user} = useAuth();
+  const { user } = useAuth();
 
   const { data: cloth, isLoading } = useQuery({
     queryKey: ["resell-product-details", id],
@@ -35,44 +34,35 @@ const ResellProductDetails = () => {
     );
   }
 
-  const handleWishlist = async() => {
-    try{
-      await axiosSecure.post("/wishlist",{
+  const handleWishlist = async () => {
+    try {
+      await axiosSecure.post("/wishlist", {
         user_email: user?.email,
         cloth_id: cloth._id,
       });
-      Swal.fire("Saved!", "Added to your wishlist 💚", "success")
-    } 
-    catch(error){
-      Swal.fire("Oops!", "Already in wishlist", "info")
+      Swal.fire("Saved!", "Added to your wishlist 💚", "success");
+    } catch (error) {
+      Swal.fire("Oops!", "Already in wishlist", "info");
     }
-  }
-
-
-  
-
-  
+  };
 
   return (
     <section className="py-20 px-4 lg:py-30 lg:px-20">
       <div className="max-w-7xl mx-auto">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
           {/* Image */}
           <div className="card  shadow-xl">
-            <figure className="h-[500px] overflow-hidden">
+            <figure className=" overflow-hidden">
               <img
                 src={cloth.photo}
                 alt={cloth.title}
-                className="h-full  w-full object-cover"
+                className="lg:h-[600px] lg:w-[400px] rounded-2xl shadow-xl shadow-primary h-full  w-full  object-cover"
               />
             </figure>
           </div>
 
           {/* Details */}
           <div className="flex flex-col gap-6">
-
             <h1 className="text-3xl md:text-4xl font-heading font-bold">
               {cloth.title}
             </h1>
@@ -90,17 +80,13 @@ const ResellProductDetails = () => {
                     : "badge-neutral"
                 }`}
               >
-                {cloth.resell_status === "not_sold"
-                  ? "Available"
-                  : "Sold Out"}
+                {cloth.resell_status === "not_sold" ? "Available" : "Sold Out"}
               </span>
             </div>
 
             {/* Meta Info */}
             <div className="flex flex-wrap gap-3">
-              <span className="badge badge-outline">
-                {cloth.cloth_type}
-              </span>
+              <span className="badge badge-outline">{cloth.cloth_type}</span>
               <span className="badge badge-outline">
                 Condition: {cloth.condition}
               </span>
@@ -127,24 +113,24 @@ const ResellProductDetails = () => {
                 Save
               </button>
 
-             <Link to={`/dashboard/payment/${id}`}>
+              <Link to={`/dashboard/payment/${id}`}>
                 <button
-                disabled={cloth.resell_status !== "not_sold"}
-                className="btn btn-primary"
-              >
-                <FaShoppingCart />
-                Buy Now
-              </button>
-             </Link>
+                  disabled={cloth.resell_status !== "not_sold"}
+                  className="btn btn-primary"
+                >
+                  <FaShoppingCart />
+                  Buy Now
+                </button>
+              </Link>
             </div>
 
             {/* Info Note */}
             <div className="alert alert-info mt-6">
               <span>
-                ♻️ By purchasing this item, you are supporting sustainable fashion.
+                ♻️ By purchasing this item, you are supporting sustainable
+                fashion.
               </span>
             </div>
-
           </div>
         </div>
       </div>

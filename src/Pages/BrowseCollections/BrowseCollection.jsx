@@ -39,25 +39,26 @@ const BrowseCollection = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:p-10">
           {resellCloths.map((cloth) => (
            <Link to={`/cloths/${cloth._id}`}>
             <div
               key={cloth._id}
-              className="card bg-base-200 shadow-xl hover:shadow-2xl transition"
+              className="card  shadow-xl hover:shadow-2xl transition"
             >
-              {/* Image */}
-              <figure className="h-64 overflow-hidden">
+              {/* Image h-64*/}
+              <figure className=" overflow-hidden">
                 <img
                   src={cloth.photo}
                   alt={cloth.title}
-                  className="h-full w-full object-cover"
+                  className="h-full rounded-2xl shadow-xl hover:shadow-primary lg:h-[450px] lg:w-[350px] w-full object-cover transition-transform duration-500 ease-in-out
+      hover:scale-110"
                 />
               </figure>
 
               {/* Body */}
-              <div className="card-body">
-                <h3 className="card-title text-lg font-semibold">
+              {/* <div className="card-body"> */}
+                {/* <h3 className="card-title text-lg font-semibold">
                   {cloth.title}
                 </h3>
 
@@ -72,10 +73,10 @@ const BrowseCollection = () => {
                   <span className="badge badge-outline">
                     {cloth.condition}
                   </span>
-                </div>
+                </div> */}
 
                 {/* Price */}
-                <div className="mt-4 flex items-center justify-between">
+                {/* <div className="mt-4 flex items-center justify-between">
                   <span className="text-xl font-bold text-primary">
                     {cloth.price} TK
                   </span>
@@ -91,13 +92,10 @@ const BrowseCollection = () => {
                       ? "Available"
                       : "Sold Out"}
                   </span>
-                </div>
+                </div> */}
 
-                {/* Actions */}
-                <div className="card-actions mt-4 justify-end">
-                  {/* <button className="btn btn-outline btn-sm">
-                    <FaHeart />
-                  </button> */}
+              
+                {/* <div className="card-actions mt-4 justify-end">
 
                   <button
                     disabled={cloth.resell_status !== "not_sold"}
@@ -106,8 +104,9 @@ const BrowseCollection = () => {
                     <FaShoppingCart />
                     Buy Now
                   </button>
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
+              
             </div>
            </Link>
           ))}

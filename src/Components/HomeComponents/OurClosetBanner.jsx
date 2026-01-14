@@ -1,5 +1,5 @@
-
-import largeCloset from "../../assets/largeCloset.jpg"
+import { Link } from "react-router";
+import largeCloset from "../../assets/largeCloset.jpg";
 import usePrimaryBtn from "../../Hooks/usePrimaryBtn";
 
 const OurClosetBanner = () => {
@@ -9,8 +9,7 @@ const OurClosetBanner = () => {
     <section
       className="relative py-24 px-4 lg:px-20 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage:
-          `url(${largeCloset})`,
+        backgroundImage: `url(${largeCloset})`,
       }}
     >
       {/* Overlay */}
@@ -36,9 +35,9 @@ const OurClosetBanner = () => {
         </p>
 
         <div className="mt-8 flex justify-center">
-          <button className={primaryBtn}>
-            ReCloset Collections
-          </button>
+          <Link to="/browseCollections">
+            <button className={primaryBtn}>ReCloset Collections</button>
+          </Link>
         </div>
       </div>
     </section>

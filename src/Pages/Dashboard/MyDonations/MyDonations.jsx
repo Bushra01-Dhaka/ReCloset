@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Link } from "react-router";
 
 const MyDonations = () => {
   const { user } = useAuth();
@@ -18,35 +19,33 @@ const MyDonations = () => {
     queryKey: ["my-donations", user?.email],
     enabled: !!user?.email,
     queryFn: async () => {
-      const res = await axiosSecure.get(
-        `/cloths/donate?email=${user.email}`
-      );
+      const res = await axiosSecure.get(`/cloths/donate?email=${user.email}`);
       return res.data;
     },
   });
 
   // Delete donation
- const handleDelete = (id) => {
-  Swal.fire({
-    title: "Are you sure?",
-    text: "You won’t be able to revert this donation!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#d33",
-    cancelButtonColor: "#3085d6",
-    confirmButtonText: "Yes, delete it!",
-  }).then(async (result) => {
-    if (result.isConfirmed) {
-      try {
-        await axiosSecure.delete(`/cloths/${id}`);
-        Swal.fire("Deleted!", "Donation has been deleted.", "success");
-        refetch();
-      } catch (error) {
-        Swal.fire("Error!", "Failed to delete donation.", "error");
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won’t be able to revert this donation!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await axiosSecure.delete(`/cloths/${id}`);
+          Swal.fire("Deleted!", "Donation has been deleted.", "success");
+          refetch();
+        } catch (error) {
+          Swal.fire("Error!", "Failed to delete donation.", "error");
+        }
       }
-    }
-  });
-};
+    });
+  };
 
   if (isLoading) {
     return <p className="text-center mt-10">Loading...</p>;
@@ -55,9 +54,7 @@ const MyDonations = () => {
   return (
     <section className="px-4 lg:py-20 lg:px-10 py-10">
       {/* Title */}
-      <h2 className="text-2xl md:text-4xl font-bold mb-6 ">
-        My Donations
-      </h2>
+      <h2 className="text-2xl md:text-4xl font-bold mb-6 ">My Donations</h2>
 
       {/* Table */}
       <div className="overflow-x-auto rounded-xl shadow">
@@ -97,13 +94,20 @@ const MyDonations = () => {
                   </span>
                 </td>
                 <td>{item.price ? `৳${item.price}` : "-"}</td>
-                <td>
+                <td className="flex justify-center items-center gap-2">
                   <button
                     onClick={() => handleDelete(item._id)}
                     className="btn btn-xs btn-error text-white"
                   >
                     Delete
                   </button>
+                  {item?.cloth_collect_option === "doorstep" && (
+                    <Link to={`/dashboard/payment/${item._id}`}>
+                      <button className="btn btn-xs btn-priary bg-yellow-300 text-black font-bold border-0">
+                        Pay {item?.charge}TK
+                      </button>
+                    </Link>
+                  )}
                 </td>
               </tr>
             ))}

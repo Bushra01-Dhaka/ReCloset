@@ -32,7 +32,7 @@ const PaymentForm = () => {
 
   console.log(cloth);
 
-  const amount = cloth?.price;
+  const amount = cloth?.price || cloth?.charge;
   const amountInCents = amount*100;
 
   const handleSubmit = async (e) => {
@@ -106,7 +106,7 @@ const PaymentForm = () => {
             timer: 2000,
             showConfirmButton: false,
           }).then(() => {
-            navigate("/dashboard");
+            navigate("/dashboard/myPaymentHistory");
           });
         }
 

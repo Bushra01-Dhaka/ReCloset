@@ -77,11 +77,11 @@ const DonateYourCloths = () => {
       if(res.data.insertedId){
         Swal.fire({
               icon: "success",
-              title: "Your cloths are donated successfully!",
+              title: "Your cloths are added successfully!",
               timer: 2000,
               showConfirmButton: false,
             }).then(() => {
-              navigate("/");
+              navigate("/dashboard/myListing");
             });
       }
     })

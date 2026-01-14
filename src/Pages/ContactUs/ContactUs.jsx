@@ -5,7 +5,7 @@ const ContactUs = () => {
   const primaryBtn = usePrimaryBtn();
 
   return (
-    <section className="min-h-screen py-20 lg:py-40 px-4 lg:px-20 ">
+    <section className=" py-20 lg:py-40 px-4 lg:px-20 ">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         {/* <div

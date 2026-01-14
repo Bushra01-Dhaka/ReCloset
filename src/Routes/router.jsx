@@ -17,6 +17,7 @@ import BrowseCollection from "../Pages/BrowseCollections/BrowseCollection";
 import ResellProductDetails from "../CustomThing/ResellProductDetails";
 import MyWishlist from "../Pages/Dashboard/MyWishLists/MyWishlist";
 import Payment from "../Pages/Payment/Payment";
+import MyPaymentHistory from "../Pages/Dashboard/MyPaymentHistory/MyPaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
        {
         path:"payment/:id",
         Component:Payment,
+       },
+       {
+        path:"myPaymentHistory",
+        Component:MyPaymentHistory,
        }
     ]
   }

@@ -1,15 +1,14 @@
 import { FaCheckCircle } from "react-icons/fa";
 import usePrimaryBtn from "../../Hooks/usePrimaryBtn";
-import donateImg from "../../assets/donate1.jpg"
+import donateImg from "../../assets/donate1.jpg";
+import { Link } from "react-router";
 
 const DonateClothBanner = () => {
-    const primaryBtn = usePrimaryBtn();
+  const primaryBtn = usePrimaryBtn();
   return (
     <section className="py-40 px-4 lg:px-20">
       <div className="max-w-7xl mx-auto">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
           {/* Left Image */}
           <div
             data-aos="fade-right"
@@ -40,8 +39,8 @@ const DonateClothBanner = () => {
             </h2>
 
             <p className="text-base-content/70">
-              Make space in your wardrobe while helping your clothes find a new life.
-              Sustainable fashion starts with you.
+              Make space in your wardrobe while helping your clothes find a new
+              life. Sustainable fashion starts with you.
             </p>
 
             {/* Bullet Points */}
@@ -53,23 +52,25 @@ const DonateClothBanner = () => {
 
               <li className="flex items-start gap-3">
                 <FaCheckCircle className="text-primary mt-1" />
-                <span>Drop off your clothes at our ReCloset service center</span>
+                <span>
+                  Drop off your clothes at our ReCloset service center
+                </span>
               </li>
 
               <li className="flex items-start gap-3">
                 <FaCheckCircle className="text-primary mt-1" />
                 <span>
-                  Or with a small service charge, we collect clothes right from your doorstep
+                  Or with a small service charge, we collect clothes right from
+                  your doorstep
                 </span>
               </li>
             </ul>
 
             {/* CTA Button */}
-            <button className={primaryBtn}>
-              ReCloset Now
-            </button>
+            <Link to="/donateCloths">
+              <button className={primaryBtn}>Donate With ReCloset</button>
+            </Link>
           </div>
-
         </div>
       </div>
     </section>

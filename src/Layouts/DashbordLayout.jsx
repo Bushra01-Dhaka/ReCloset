@@ -1,4 +1,10 @@
-import { FaDonate, FaHeart, FaTags, FaUserCircle } from "react-icons/fa";
+import {
+  FaDonate,
+  FaHeart,
+  FaHistory,
+  FaTags,
+  FaUserCircle,
+} from "react-icons/fa";
 import { MdInventory } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { Link, NavLink, Outlet } from "react-router";
@@ -115,6 +121,18 @@ const DashbordLayout = () => {
                   Wish List
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/dashboard/myPaymentHistory"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaHistory className="text-lg" />
+                  My Payment History
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -219,6 +237,18 @@ const DashbordLayout = () => {
             >
               <FaHeart className="text-lg" />
               Wish List
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard/myPaymentHistory"
+              className={({ isActive }) =>
+                `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+              }
+            >
+              <FaHistory className="text-lg" />
+              My Payment History
             </NavLink>
           </li>
         </ul>
