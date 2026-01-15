@@ -20,6 +20,7 @@ import Payment from "../Pages/Payment/Payment";
 import MyPaymentHistory from "../Pages/Dashboard/MyPaymentHistory/MyPaymentHistory";
 import ForbiddenPage from "../Pages/ForbiddenPage/ForbiddenPage";
 import MakeAdmin from "../Pages/Dashboard/MakeAdmin/MakeAdmin";
+import AllDonations from "../Pages/Dashboard/AllDonations/AllDonations";
 
 const router = createBrowserRouter([
   {
@@ -105,6 +106,10 @@ const router = createBrowserRouter([
        {
         path:"makeAdmin",
         Component:MakeAdmin,
+       },
+       {
+        path:"allDonations",
+        Component:AllDonations,
        }
     ]
   }

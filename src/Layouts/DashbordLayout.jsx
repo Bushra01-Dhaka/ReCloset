@@ -1,5 +1,6 @@
 import {
   FaDonate,
+  FaHandHoldingHeart,
   FaHeart,
   FaHistory,
   FaTags,
@@ -9,8 +10,10 @@ import {
 import { MdInventory } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { Link, NavLink, Outlet } from "react-router";
+import useRole from "../Hooks/useRole";
 
 const DashbordLayout = () => {
+  const { role, isLoading } = useRole();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -134,18 +137,36 @@ const DashbordLayout = () => {
                   My Payment History
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/dashboard/makeAdmin"
-                  className={({ isActive }) =>
-                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+
+              {/* Admin Routes */}
+              {!isLoading && role === "admin" && (
+                <>
+                  <li>
+                    <NavLink
+                      to="/dashboard/makeAdmin"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
-                  }
-                >
-                  <FaUserShield className="text-lg" />
-                  Make Admin
-                </NavLink>
-              </li>
+                      }
+                    >
+                      <FaUserShield className="text-lg" />
+                      Make Admin
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/dashboard/allDonations"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                      }
+                    >
+                      <FaHandHoldingHeart className="text-lg" />
+                      All Donations
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
@@ -264,18 +285,36 @@ const DashbordLayout = () => {
               My Payment History
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/dashboard/makeAdmin"
-              className={({ isActive }) =>
-                `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+
+          {/* Admin Routes */}
+          {!isLoading && role === "admin" && (
+            <>
+              <li>
+                <NavLink
+                  to="/dashboard/makeAdmin"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
       ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
-              }
-            >
-              <FaUserShield className="text-lg" />
-              Make Admin
-            </NavLink>
-          </li>
+                  }
+                >
+                  <FaUserShield className="text-lg" />
+                  Make Admin
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/allDonations"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaHandHoldingHeart className="text-lg" />
+                  All Donations
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>
