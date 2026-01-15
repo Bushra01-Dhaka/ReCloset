@@ -18,6 +18,7 @@ import ResellProductDetails from "../CustomThing/ResellProductDetails";
 import MyWishlist from "../Pages/Dashboard/MyWishLists/MyWishlist";
 import Payment from "../Pages/Payment/Payment";
 import MyPaymentHistory from "../Pages/Dashboard/MyPaymentHistory/MyPaymentHistory";
+import ForbiddenPage from "../Pages/ForbiddenPage/ForbiddenPage";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
         {
           path:"/cloths/:id",
           Component:ResellProductDetails,
+        },
+        {
+          path:"/forbiddenPage",
+          Component:ForbiddenPage,
         }
     ]
   },
