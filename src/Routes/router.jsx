@@ -19,6 +19,7 @@ import MyWishlist from "../Pages/Dashboard/MyWishLists/MyWishlist";
 import Payment from "../Pages/Payment/Payment";
 import MyPaymentHistory from "../Pages/Dashboard/MyPaymentHistory/MyPaymentHistory";
 import ForbiddenPage from "../Pages/ForbiddenPage/ForbiddenPage";
+import MakeAdmin from "../Pages/Dashboard/MakeAdmin/MakeAdmin";
 
 const router = createBrowserRouter([
   {
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
        {
         path:"myPaymentHistory",
         Component:MyPaymentHistory,
+       },
+       {
+        path:"makeAdmin",
+        Component:MakeAdmin,
        }
     ]
   }

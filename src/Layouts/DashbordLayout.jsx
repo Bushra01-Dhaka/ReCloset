@@ -4,6 +4,7 @@ import {
   FaHistory,
   FaTags,
   FaUserCircle,
+  FaUserShield,
 } from "react-icons/fa";
 import { MdInventory } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
@@ -133,6 +134,18 @@ const DashbordLayout = () => {
                   My Payment History
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/dashboard/makeAdmin"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaUserShield className="text-lg" />
+                  Make Admin
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -249,6 +262,18 @@ const DashbordLayout = () => {
             >
               <FaHistory className="text-lg" />
               My Payment History
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard/makeAdmin"
+              className={({ isActive }) =>
+                `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+              }
+            >
+              <FaUserShield className="text-lg" />
+              Make Admin
             </NavLink>
           </li>
         </ul>
