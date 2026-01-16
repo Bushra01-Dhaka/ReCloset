@@ -4,6 +4,7 @@ import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
+import { Link } from "react-router";
 
 const MyWishlist = () => {
   const axiosSecure = useAxiosSecure();
@@ -59,8 +60,9 @@ const MyWishlist = () => {
                 <p>{item.cloth.price} TK</p>
 
                 <div className="flex justify-between items-center mt-3">
-                  <button className="btn btn-sm btn-primary">View</button>
-
+                  <Link to={`/cloths/${item.cloth_id}`}>
+                    <button className="btn btn-sm btn-primary">View</button>
+                  </Link>
                   <button
                     onClick={() => handleRemove(item._id)}
                     className="btn btn-sm btn-outline btn-error"

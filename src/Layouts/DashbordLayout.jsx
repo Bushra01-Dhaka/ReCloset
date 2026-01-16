@@ -140,6 +140,8 @@ const DashbordLayout = () => {
                 </NavLink>
               </li>
 
+                
+
               {/* Admin Routes */}
               {!isLoading && role === "admin" && (
                 <>
@@ -323,6 +325,8 @@ const DashbordLayout = () => {
               My Payment History
             </NavLink>
           </li>
+
+          <hr className="py-2 text-slate-700"/>
 
           {/* Admin Routes */}
           {!isLoading && role === "admin" && (

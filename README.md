@@ -1,16 +1,128 @@
-# React + Vite
+# 👚 ReCloset – Donate, Resell & Reuse Clothes Sustainably
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ReCloset is a full-stack web platform designed to promote sustainable fashion by allowing users to donate unused clothes and resell new or gently used items.
+The platform encourages reuse, reduces textile waste, and helps communities by connecting donors, buyers, and volunteers in one seamless experience.
 
-Currently, two official plugins are available:
+## 🌍 Project Vision
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Every year, millions of wearable clothes go to waste.
+ReCloset aims to:
 
-## React Compiler
+- ♻️ Reduce clothing waste
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🤝 Encourage community donations
 
-## Expanding the ESLint configuration
+- 💰 Enable easy reselling of clothes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌱 Promote sustainable living
+
+## 🚀 Live Demo
+
+- 🔗 Client: https://github.com/Bushra01-Dhaka/ReCloset
+- 🔗 Server: https://github.com/Bushra01-Dhaka/recloset-server
+
+## 🧩 Core Features
+### 👤 User Features
+
+- 🔐 Secure authentication (Firebase)
+
+- 👕 Donate clothes with detailed information
+
+- 🛍️ Resell new or used clothes
+
+- ❤️ Wishlist favorite resell items
+
+- 💳 Secure Stripe payment system
+
+- 📜 View payment history
+
+- 🧾 Track donated & resell items
+
+- 🎉 Donation member recognition banner
+
+### 🛠️ Admin Features
+
+- 👥 Manage users & roles (Make Admin)
+
+- 📦 Manage donated clothes
+
+- ♻️ Collect donated clothes & track donors
+
+- 🛍️ Manage resell items (Edit / Delete)
+
+- 💰 View all transactions
+
+- 📊 Visual dashboard with statistics
+
+- 🧑‍🤝‍🧑 Manage donation members
+
+## 🖥️ Tech Stack
+### Frontend
+
+- ⚛️ React
+
+- ⚡ Vite
+
+- 🎨 Tailwind CSS + DaisyUI
+
+- 🔁 TanStack Query
+
+- 🔐 Firebase Authentication
+- 📊 Recharts (Admin Analytics)
+
+- 🍬 SweetAlert2
+
+- 🔗 React Router DOM
+
+
+### Backend
+
+- 🟢 Node.js
+
+- 🚀 Express.js
+
+- 🍃 MongoDB
+
+- 🔐 Firebase Admin SDK
+
+- 💳 Stripe Payment Gateway
+
+- 🛡️ JWT (Firebase ID Token)
+
+
+## 🔐 Authentication & Authorization
+
+- Firebase Authentication for users
+
+- Firebase Admin SDK for backend verification
+
+- Role-based route protection:
+
+- User Routes
+
+- Admin Routes
+
+- Secure API access with token validation
+
+
+## 💳 Payment System
+
+- Stripe Payment Gateway
+
+- Secure checkout
+
+- Automatic status updates after payment
+
+- Full payment history tracking
+
+
+## 👩‍💻 Author
+
+Humayra Anjum Bushra
+Frontend Developer (React & MERN)
+
+- 🌐 Portfolio: https://bushra-portfolio.surge.sh/
+
+- 💼 LinkedIn: https://www.linkedin.com/in/humayra1/
+
+- 📧 Email: humayraanjum87@gmail.com
