@@ -22,6 +22,8 @@ import ForbiddenPage from "../Pages/ForbiddenPage/ForbiddenPage";
 import MakeAdmin from "../Pages/Dashboard/MakeAdmin/MakeAdmin";
 import AllDonations from "../Pages/Dashboard/AllDonations/AllDonations";
 import CollectDonatedCloths from "../Pages/Dashboard/CollectDonatedCloths/CollectDonatedCloths";
+import HandleResellItems from "../Pages/Dashboard/HandleResellItems/HandleResellItems";
+import AdminRoutes from "./AdminRoutes";
 
 const router = createBrowserRouter([
   {
@@ -106,15 +108,19 @@ const router = createBrowserRouter([
        },
        {
         path:"makeAdmin",
-        Component:MakeAdmin,
+        element:<AdminRoutes><MakeAdmin></MakeAdmin></AdminRoutes>
        },
        {
         path:"allDonations",
-        Component:AllDonations,
+        element:<AdminRoutes><AllDonations></AllDonations></AdminRoutes>
        },
        {
         path:"collectDonatedCloths",
-        Component: CollectDonatedCloths,
+        element:<AdminRoutes><CollectDonatedCloths></CollectDonatedCloths></AdminRoutes>
+       },
+       {
+        path:"handleResellItems",
+        element:<AdminRoutes><HandleResellItems></HandleResellItems></AdminRoutes>
        }
     ]
   }

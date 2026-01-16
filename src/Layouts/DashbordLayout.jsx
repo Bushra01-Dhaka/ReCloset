@@ -178,6 +178,18 @@ const DashbordLayout = () => {
                       Collect Donated Cloths
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink
+                      to="/dashboard/handleResellItems"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                      }
+                    >
+                      <FaTags className="text-lg" />
+                      Handle Resell Items
+                    </NavLink>
+                  </li>
                 </>
               )}
             </ul>
@@ -336,6 +348,18 @@ const DashbordLayout = () => {
                 >
                   <FaTshirt className="text-lg" />
                   Collect Donated Cloths
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/handleResellItems"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaTags className="text-lg" />
+                  Handle Resell Items
                 </NavLink>
               </li>
             </>
