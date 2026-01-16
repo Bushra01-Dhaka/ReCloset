@@ -4,16 +4,18 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { Link, useParams } from "react-router";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxios from "../Hooks/useAxios";
 
 const ResellProductDetails = () => {
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxios();
   const { user } = useAuth();
 
   const { data: cloth, isLoading } = useQuery({
     queryKey: ["resell-product-details", id],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/cloths/${id}`);
+      const res = await axiosPublic.get(`/cloths/${id}`);
       return res.data;
     },
   });

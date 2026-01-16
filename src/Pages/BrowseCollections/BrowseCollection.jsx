@@ -2,15 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Link } from "react-router";
+import useAxios from "../../Hooks/useAxios";
 
 
 const BrowseCollection = () => {
   const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxios();
 
   const { data: resellCloths = [], isLoading } = useQuery({
     queryKey: ["browse-resell-cloths"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/cloths/resell");
+      const res = await axiosPublic.get("/cloths/resell");
       return res.data;
     },
   });
