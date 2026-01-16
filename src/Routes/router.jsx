@@ -24,6 +24,7 @@ import AllDonations from "../Pages/Dashboard/AllDonations/AllDonations";
 import CollectDonatedCloths from "../Pages/Dashboard/CollectDonatedCloths/CollectDonatedCloths";
 import HandleResellItems from "../Pages/Dashboard/HandleResellItems/HandleResellItems";
 import AdminRoutes from "./AdminRoutes";
+import AllTransactions from "../Pages/Dashboard/AllTransactions/AllTransactions";
 
 const router = createBrowserRouter([
   {
@@ -121,6 +122,10 @@ const router = createBrowserRouter([
        {
         path:"handleResellItems",
         element:<AdminRoutes><HandleResellItems></HandleResellItems></AdminRoutes>
+       },
+       {
+        path:"allTransactions",
+        element:<AdminRoutes><AllTransactions></AllTransactions></AdminRoutes>
        }
     ]
   }

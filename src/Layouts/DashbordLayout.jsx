@@ -3,6 +3,7 @@ import {
   FaHandHoldingHeart,
   FaHeart,
   FaHistory,
+  FaMoneyCheckAlt,
   FaTags,
   FaTshirt,
   FaUserCircle,
@@ -190,6 +191,18 @@ const DashbordLayout = () => {
                       Handle Resell Items
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink
+                      to="/dashboard/allTransactions"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                      }
+                    >
+                      <FaMoneyCheckAlt className="text-lg" />
+                      All Transactions
+                    </NavLink>
+                  </li>
                 </>
               )}
             </ul>
@@ -360,6 +373,18 @@ const DashbordLayout = () => {
                 >
                   <FaTags className="text-lg" />
                   Handle Resell Items
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/allTransactions"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaMoneyCheckAlt className="text-lg" />
+                  All Transactions
                 </NavLink>
               </li>
             </>
