@@ -4,6 +4,7 @@ import {
   FaHeart,
   FaHistory,
   FaTags,
+  FaTshirt,
   FaUserCircle,
   FaUserShield,
 } from "react-icons/fa";
@@ -165,6 +166,18 @@ const DashbordLayout = () => {
                       All Donations
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink
+                      to="/dashboard/collectDonatedCloths"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                      }
+                    >
+                      <FaTshirt className="text-lg" />
+                      Collect Donated Cloths
+                    </NavLink>
+                  </li>
                 </>
               )}
             </ul>
@@ -311,6 +324,18 @@ const DashbordLayout = () => {
                 >
                   <FaHandHoldingHeart className="text-lg" />
                   All Donations
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/collectDonatedCloths"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 py-2 mb-4 mx-6 text-secondary hover:font-bold
+      ${isActive ? "shadow-primary shadow-lg font-bold" : "hover:bg-primary"}`
+                  }
+                >
+                  <FaTshirt className="text-lg" />
+                  Collect Donated Cloths
                 </NavLink>
               </li>
             </>

@@ -21,6 +21,7 @@ import MyPaymentHistory from "../Pages/Dashboard/MyPaymentHistory/MyPaymentHisto
 import ForbiddenPage from "../Pages/ForbiddenPage/ForbiddenPage";
 import MakeAdmin from "../Pages/Dashboard/MakeAdmin/MakeAdmin";
 import AllDonations from "../Pages/Dashboard/AllDonations/AllDonations";
+import CollectDonatedCloths from "../Pages/Dashboard/CollectDonatedCloths/CollectDonatedCloths";
 
 const router = createBrowserRouter([
   {
@@ -110,6 +111,10 @@ const router = createBrowserRouter([
        {
         path:"allDonations",
         Component:AllDonations,
+       },
+       {
+        path:"collectDonatedCloths",
+        Component: CollectDonatedCloths,
        }
     ]
   }
