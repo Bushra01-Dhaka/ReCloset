@@ -1,7 +1,7 @@
 import { FaGoogle } from "react-icons/fa";
 import registerImg from ".././../assets/log1.png";
 import usePrimaryBtn from "../../Hooks/usePrimaryBtn";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
@@ -11,6 +11,10 @@ const Login = () => {
   const primaryBtn = usePrimaryBtn();
   const { logIn } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // 👇 THIS is the key line
+  const from = location.state?.from || "/";
   const {
     register,
     handleSubmit,
@@ -37,7 +41,7 @@ const Login = () => {
           secondary: "#00000",
         },
       });
-      navigate("/");
+      navigate(from, { replace: true });
     });
   };
   return (

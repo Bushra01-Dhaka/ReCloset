@@ -5,24 +5,9 @@ const ContactUs = () => {
   const primaryBtn = usePrimaryBtn();
 
   return (
-    <section className=" py-20 lg:py-40 px-4 lg:px-20 ">
+    <section className=" py-20 lg:py-40 px-8 lg:px-20 ">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        {/* <div
-          className="text-center max-w-2xl mx-auto mb-16"
-          data-aos="fade-up"
-        >
-          <span className="badge badge-primary badge-outline">
-            Contact Us
-          </span>
-          <h1 className="text-3xl md:text-5xl font-heading font-bold mt-4">
-            Let’s Talk About <span className="text-primary">ReCloset</span>
-          </h1>
-          <p className="mt-4 text-base-content/70">
-            Have questions or want to work with us? 
-            We’d love to hear from you.
-          </p>
-        </div> */}
 
         {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -68,7 +53,7 @@ const ContactUs = () => {
                        shadow-[0_0_40px_rgba(16,185,129,0.35)] 
                        hover:shadow-[0_0_60px_rgba(16,185,129,0.6)]
                        transition"
-            data-aos="fade-left"
+            data-aos="fade-up"
           >
             <div className="card-body space-y-4">
               <input

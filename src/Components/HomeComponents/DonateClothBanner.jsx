@@ -6,7 +6,7 @@ import { Link } from "react-router";
 const DonateClothBanner = () => {
   const primaryBtn = usePrimaryBtn();
   return (
-    <section className="relative py-40 bg-slate-900 px-4 lg:px-20">
+    <section className="relative py-40 bg-slate-900 px-8 lg:px-20">
       <div className=" max-w-7xl mx-auto">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Image */}
@@ -24,7 +24,7 @@ const DonateClothBanner = () => {
 
           {/* Right Content */}
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-duration="1000"
             className="space-y-6"
           >
