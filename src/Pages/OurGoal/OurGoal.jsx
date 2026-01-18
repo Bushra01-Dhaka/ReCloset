@@ -1,10 +1,11 @@
 import { FaBullseye } from "react-icons/fa";
 import usePrimaryBtn from "../../Hooks/usePrimaryBtn";
-import coverImg from "../../assets/donate2.jpg"
+import coverImg from "../../assets/donate2.jpg";
 import DonateClothBanner from "../../Components/HomeComponents/DonateClothBanner";
 import NgoMarques from "../../Components/HomeComponents/NgoMarques";
 import PictureCards from "../../CustomThing/PictureCards";
 import CollaborateWithReCloset from "../../Components/HomeComponents/CollaborateWithReCloset";
+import { Link } from "react-router";
 
 const OurGoal = () => {
   const primaryBtn = usePrimaryBtn();
@@ -49,16 +50,18 @@ const OurGoal = () => {
           </p>
 
           <div className="mt-6">
-            <button className={primaryBtn}>Donate Cloths Now</button>
+            <Link to="/donateCloths">
+              <button className={primaryBtn}>Donate Cloths Now</button>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="py-20">
-        <DonateClothBanner/>
+        <DonateClothBanner />
       </div>
       <div>
-        <NgoMarques/>
+        <NgoMarques />
       </div>
 
       <CollaborateWithReCloset></CollaborateWithReCloset>
